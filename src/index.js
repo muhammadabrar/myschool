@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'carbon-components/css/carbon-components.min.css';
 // import './cooltipz.css';
-import 'cooltipz-css';
+// import 'cooltipz-css';
 import './index.css';
 import App from './App';
 import { store } from './store/store'
