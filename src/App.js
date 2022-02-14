@@ -14,10 +14,10 @@ import {
   Route
 } from "react-router-dom";
 import Staffs from './pages/staffs';
-import Classess from './pages/Classes';
 import Student_profile from './pages/student';
 import Withdrawal from './pages/withdrawal';
 import Admission from './pages/admission';
+import { Progress } from './pages/progress';
 function App() {
   return (
   <>
@@ -32,8 +32,9 @@ function App() {
       <Route  path="/staff/:staffid" element={<Staffs />} />
       <Route  path="/student/:studentid" element={<Student_profile />} />
       <Route  path="/Withdrawalstudent" element={<Withdrawal />} />
+      <Route  path="/progress" element={<Progress />} />
 
-      <Route   path="/classes" element={<Classess />} />
+
       <Route   path="/admission" element={<Admission />} />
 
       <Route  path="/exam/:examid" element={<ExamDetail />} />
@@ -45,12 +46,6 @@ function App() {
       
 
     </Routes>
-    <footer class="bg-light text-center  text-lg-start">
-      <div class="text-center p-3" >
-        © 2020 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-      </div>
-    </footer>
   </Router>
 </>
   );

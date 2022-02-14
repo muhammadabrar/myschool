@@ -33,11 +33,7 @@ function Students_chart() {
     <>
 
       <div className={theme ? "card students-chart-card-dark " : "card students-chart-card  "}>
-        <div className="card-header bg-primary text-light">
-
-          Students in This Session <small className="value-ref">(2021)</small>
-
-        </div>
+       
         <div className="card-body">
           <Chart options={data} series={data.series} type='pie' />
           <ol className="list-group  list-group-numbered">

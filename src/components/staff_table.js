@@ -5,8 +5,16 @@ import { IoMdPersonAdd } from 'react-icons/io'
 import avater from '../cover.jpg';
 import { NavLink } from 'react-router-dom';
 import AddStaff from './staff/add'
+import { ChevronDown16, ChevronUp16, ChevronRight16, Add24 } from "@carbon/icons-react";
+import {
+    Button,
+    OverflowMenu,
+    OverflowMenuItem,
+  } from "carbon-components-react";
+import { isMobile } from 'react-device-detect';
 function Staff() {
     const theme = useSelector((state) => state.theme.value)
+    const [search, setsearch] = useState();
     const [data, setdata] = useState([
         {
             "name": "Muhammad Abrar",
@@ -37,42 +45,117 @@ function Staff() {
             "gender": "Male"
         }
     ])
+  const [row, setrow] = useState(data);
+
     const [isAdd, setisAdd] = useState(false)
     const [refresh, setrefresh] = useState(1)
-
+    useEffect(() => {
+        searchResult();
+      }, [search]);
+      const searchResult = async (e) => {
+        if (search) {
+          const results = data.filter(
+            (data) =>
+              data.name.toLowerCase().includes(search)
+          );
+          console.log("result :", results);
+          setrow(results);
+        } else {
+          setrow(data);
+          console.log("row :", row);
+        }
+      };
+      const handlesearch = (event) => {
+        if (event.target.value) {
+          setsearch(event.target.value);
+        } else {
+          setrow(data);
+        }
+      };
 
 
     return (<>
         <div className={theme ? "card students-chart-card-dark " : "card students-chart-card "} >
             <div className="card-header bg-primary text-light">
-                <div className="row">
-                    <div className="col-md-4 pt-3">
-                        <p className={theme && "card-title-dark"} style={{ margin: 0 }}>Staff <small>(current Staff)</small></p>
-                    </div>
-                    <div className="col-md-8">
-                        <button class="btn-icon bg-info mt-2 float-end shadow" onClick={()=>setisAdd(true)} data-toggle="popover" aria-label="Add New Staff" data-cooltipz-dir="bottom"><IoMdPersonAdd /></button>
+                <div className="staff-Header">
+                    <>
+                    {isMobile && <Button
+                kind="secondary"
+                size='field'
+                style={{width:"100%", marginBottom:".5rem", borderRadius: "5px"}}
+                className='staff-btn'
+                renderIcon={Add24}
+                onClick={()=>setisAdd(true)}
+              >
+                Add Staff
+              </Button>}
+
+              {!isMobile && <Button
+                kind="secondary"
+                size='field'
+                style={{width:"10rem", marginRight:".5rem", borderRadius: "5px"}}
+                className='staff-btn'
+                renderIcon={Add24}
+                onClick={()=>setisAdd(true)}
+              >
+                Add Staff
+              </Button>}
+                    <input
+                        type="text"
+                        onChange={handlesearch}
+                        placeholder="example(abrar)"
+                        className={`form-control search shadow-none ${
+                            theme && "bg-dark text-light"
+                        }`}
+                        />
+                    </>
+                    <div>
+                    
                     </div>
                 </div>
             </div>
+            <div className="students-cards fade-in-down p-2">
+          {row.map((data, index) => (
+            <div className={`student-card  ${theme && "bg-dark"}`}>
+              <NavLink to={`staff/${index + 1}`}>
+                <img src={avater} className="avater" alt="..." />
+              </NavLink>
 
-            <div className="card-content p-2">
-                {data.map((data, index) =>
-                    <div className={`bx--grid student-row  ${theme && "bg-dark"}`}>
-                        <div className="c2">
-                            <NavLink className={!theme ? "navLink text-dark" : "navLink text-light"} to={`staff/${index + 1}`}>
-                                <img src={avater} className="avater" alt="..." />
-                            </NavLink>
-                        </div>
-                        <div className="c3">
-                            <NavLink className={!theme ? "navLink text-dark" : "navLink text-light"} to={`staff/${index + 1}`}>
-                                {data.name} <br />{data.post}
-                            </NavLink>
-                        </div>
-                        <div className="c7">{data.contact1}<br />{data.contact2}</div>
-                        <div className="c5">{data.gender}</div>
-                    </div>
-                )}
+              <p className="name">
+                <NavLink
+                  className={
+                    !theme ? "navLink text-dark" : "navLink text-light"
+                  }
+                  to={`staff/${index + 1}`}
+                >
+                  {data.name}
+                </NavLink>
+              </p>
+              <p className="text-muted">{data.post} </p>
+              <p className='status'>gender | Attendance</p>
+              <snap className="divider"></snap>
+
+              <div className="contact">
+                    
+                    {data.contact1}
+                    <br />
+                    {data.contact2}
+                  </div>
+              <snap className="divider"></snap>
+              <Button
+                kind="ghost"
+                size="small"
+                href={`staff/${index + 1}`}
+                renderIcon={ChevronRight16}
+              >
+                More
+              </Button>
+
+              
             </div>
+          ))}
+        </div>
+           
 
 
 

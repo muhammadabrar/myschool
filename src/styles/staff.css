@@ -1,0 +1,23 @@
+.staff-states{
+    display: flex;
+    justify-content: space-around;
+}
+.staff-profile-titles{
+    text-align: center;
+    /* padding: 2rem; */
+    background-color: rgb(70, 70, 70);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .staff-states{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .staff-profile-titles{
+        margin-top: 1rem;
+    }
+}
+
+

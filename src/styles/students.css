@@ -1,0 +1,233 @@
+.staff-Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.students-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.select{
+    width: 10rem;
+    margin: 0.2rem;
+}
+
+.students-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* grid-template-columns: auto auto auto auto auto; */
+}
+.student-card{
+    width: 225px;
+    border-radius: 5px;
+    border: solid 1px #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: .2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+.avater {
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+  }
+
+ .status{
+     font-size: smaller;
+ }
+  .navLink{
+      text-decoration: none;
+  }
+  .divider{
+      width: 100%;
+      margin: 0.5rem 0;
+      border: rgb(70, 70, 70) solid 1px;
+  }
+  .contact{
+      padding: 0.5rem 0;
+     
+  }
+  .address{
+      width: 14rem;
+  }
+
+
+
+.card{
+    border: none;
+    border-radius: 15px;
+}  
+
+.card-body{
+    border-radius: 10px;
+
+}
+.profile-detail{
+    text-align: center;
+    border-radius: 10px;
+
+}
+.profile{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+  .info-box{
+      border-bottom: solid 1px #888;
+      padding-bottom: .5rem;
+      margin-bottom: .5rem;
+
+  }
+  .info-box:last-child{
+    border-bottom: none;
+    padding-bottom: none;
+    margin-bottom: none;
+}
+
+
+.std-states{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* background-color: darkblue; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+.std-state{
+    width: 12rem;
+    /* height: 15.5rem; */
+    position: relative;
+    text-align: center;
+}
+
+.range-chart{
+    width: 12rem;
+}
+
+
+.profile-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.p-action{
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: smaller;
+    color: #000;
+}
+
+.p-a-icon{
+    margin-bottom: 0.5rem;
+    padding: .4rem;
+    border-radius: 50%;
+}
+.p-action:hover .p-a-icon{
+    background: #888;
+}
+.ghost-btn{
+    border: none;
+    background: none;
+    color: #007BFF;
+    margin-top: 1.5rem;
+}
+
+.s-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-sm{
+    font-size: smaller;
+}
+
+.tab{
+    width: 5rem;
+    color: blue;
+}
+.tab-body{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+.select{
+    padding: .5rem;
+    border: 1px solid #555;
+    box-sizing: border-box;
+}
+.select option{
+    margin: .5rem;
+}
+.complaints{
+    margin-bottom: 1rem;
+}
+  /* .info-h{
+    font-family: Helvetica-bold;
+
+  } */
+  @media screen and (max-width: 1445px) {
+    .profile{
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+  }
+@media screen and (max-width: 500px) {
+    /* .search{
+      width: 28rem;
+    } */
+    .staff-Header{
+        flex-direction: column;
+    }
+    .staff-btn{
+        width: 14rem;
+        margin-top: 0.5rem;
+    }
+    .students-cards{
+        display: flex;
+    justify-content: center;
+
+        flex-wrap: wrap;
+    }
+    .student-card{
+        width: 18rem;
+    }
+    .select{
+        width: 7rem;
+        margin: .5rem 0;
+    }
+    .std-states{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    .range-chart{
+        width: 12rem;
+    }
+    .heading{
+        padding-top: 1rem;
+       }
+  }
+
+
+
+
+

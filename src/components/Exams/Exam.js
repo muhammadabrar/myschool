@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, useParams } from 'react-router-dom';
-import { Table,  Image, Modal } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import moment from 'moment';
 import { AiOutlineMenu, AiFillEdit, AiOutlineUserDelete, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
 import { Tooltip, Link, Button, Tag } from 'carbon-components-react';

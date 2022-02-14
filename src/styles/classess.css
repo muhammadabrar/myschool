@@ -1,0 +1,19 @@
+.c-info-box{
+    border-bottom: solid 1px #888;
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.c-info-box-action{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+    .c-info-box-action{
+        flex-direction: column;
+    }
+}
