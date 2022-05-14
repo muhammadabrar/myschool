@@ -7,10 +7,13 @@ import { Button } from "carbon-components-react";
 import { isMobile } from "react-device-detect";
 import { Add24, Edit24, Close24 } from "@carbon/icons-react";
 import Add_Class from "./classes/add";
+import Edit_Class from "./classes/Edit";
 
 function Classes() {
   const theme = useSelector((state) => state.theme.value);
  const [addClass, setaddClass] = useState(false);
+ const [EditClass, setEditClass] = useState(false);
+
   const dispatch = useDispatch();
 
   const [data, setdata] = useState([
@@ -160,6 +163,8 @@ function Classes() {
                       size="sm"
                       renderIcon={Edit24}
                       className={`shadow `}
+                  onClick={() => setEditClass(true)}
+
                     >
                       Edit Class
                     </Button>
@@ -183,6 +188,7 @@ function Classes() {
         </div>
       </div>
       <Add_Class show={addClass} onHide={() => setaddClass(false)}/>
+      <Edit_Class show={EditClass} onHide={() => setEditClass(false)}/>
       <br />
     </>
   );

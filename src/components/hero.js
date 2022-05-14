@@ -19,13 +19,16 @@ import {
   Partnership32,
   Settings32,
   Settings16,
-  AddFilled32,
+  Add32,
   Logout16,
   Partnership16
 } from "@carbon/icons-react";
 import { isMobile } from "react-device-detect";
 import name from "../cover.jpg";
 import { OverflowMenuItem } from "carbon-components-react";
+import { BsFillCalendarCheckFill, BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
+
 function Hero() {
   const title = useSelector((state) => state.title.value);
   const theme = useSelector((state) => state.theme.value);
@@ -66,31 +69,6 @@ function Hero() {
               <h3 className="page-title">{title}</h3>
             </div>
             <div className="navbar-items">
-              {/* <div className="nav-btn">
-              <button
-                className="btn-icon shadow bg-secondary"
-                onClick={IsSettingShow}
-                data-toggle="popover"
-                aria-label="Settings"
-                data-cooltipz-dir="bottom"
-              >
-                <Settings32 />{" "}
-              </button>
-            </div>
-            <div className="nav-btn">
-              <button
-                className="btn-icon shadow bg-info"
-                onClick={IsMeetShow}
-                data-toggle="popover"
-                aria-label="Meetings and Appointments"
-                data-cooltipz-dir="bottom"
-              >
-                <Partnership32 />
-              </button>
-            </div> */}
-              {/* <div className="nav-btn">
-                            <button className="btn-icon shadow bg-warning" onClick={IsHistoryShow} data-toggle="popover" aria-label="Activities" data-cooltipz-dir="bottom"><AiOutlineHistory /></button>
-                        </div> */}
 
               <div className="nav-btn">
                 <img
@@ -104,7 +82,7 @@ function Hero() {
                   <div className="user-dropdown-menu">
                     <OverflowMenuItem
                       className="dropdown-menu-item"
-                      itemText={"Profile"}
+                      
                       itemText={
                         <>
                           <User16 /> Profile
@@ -139,7 +117,7 @@ function Hero() {
                           <Finance16 /> Finance
                         </>
                       }
-                      href="#"
+                      href="/finance"
                     />
 
                     <OverflowMenuItem
@@ -183,11 +161,12 @@ function Hero() {
                   onClick={IsMenuMenu}
                   src={name}
                 />
-                {IsMenu && (
+                {IsMenu && (<>
+                  <div className="overlay" onClick={IsMenuMenu}></div>
                   <div className="user-dropdown-menu">
                     <OverflowMenuItem
                       className="dropdown-menu-item"
-                      itemText={"Profile"}
+                      
                       itemText={
                         <>
                           <User16 /> Profile
@@ -211,7 +190,7 @@ function Hero() {
                           <Finance16 /> Finance
                         </>
                       }
-                      href="#"
+                      href="/finance"
                     />
 
                     <OverflowMenuItem
@@ -223,6 +202,7 @@ function Hero() {
                       hasDivider
                     />
                   </div>
+                  </>
                 )}
               </div>
             </div>
@@ -244,7 +224,7 @@ function Hero() {
               aria-label="Add new session"
               data-cooltipz-dir="bottom"
             >
-              <AddFilled32 />
+              <Add32 />
             </i>
           </p>
           {IsSessionEntry && <AddSession />}
@@ -256,29 +236,18 @@ function Hero() {
 
       <Offcanvas placement="start" show={IsMeet} onHide={CloseMeet}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>
+          <Offcanvas.Title className="title">
             Meetings and Appointments{" "}
-            <i
-              className="pb-1"
-              onClick={() => setIsAddMeet(true)}
-            >
-              <AddFilled32 />
-            </i>
+            <Link to="#!" onClick={() => setIsAddMeet(true)} className="btn-icon ms-2 btn-warning">
+                <Add32 />
+              </Link>
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
+          <hr/>
           <Meetings IsAddMeet={IsAddMeet} />
         </Offcanvas.Body>
       </Offcanvas>
-      {/* <Offcanvas placement="start" show={IsHistory} onHide={CloseHistory}>
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Activities</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-
-                    <History />
-                </Offcanvas.Body>
-            </Offcanvas> */}
       <Add show={IsAddMeet} onHide={() => setIsAddMeet(false)} />
 
       <Outlet />

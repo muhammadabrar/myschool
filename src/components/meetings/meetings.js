@@ -1,11 +1,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, useParams } from 'react-router-dom';
-import { Table,  Image, Modal } from 'react-bootstrap'
-import moment from 'moment';
 import { ContentSwitcher, Switch  } from 'carbon-components-react';
-
+import {
+    TrashCan16,
+  } from "@carbon/icons-react";
 function Meetings(props) {
   const theme = useSelector((state) => state.theme.value)
 const months = ["Jan" ,"Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct" ,"Nov" ,"Dec"]
@@ -19,7 +18,6 @@ var handledate = (e) =>{
     setDate(e.target.value.split('-'))
 
 }
-console.log("date:" + startDate +", " + Date[0])
   return (
    <>
    <ContentSwitcher onChange={console.log}>
@@ -31,11 +29,11 @@ console.log("date:" + startDate +", " + Date[0])
 {(() => {
         switch (MeetingTabs) {
           case 'today':
-            return <><div class="timeline  block mb-4">
+            return <><div class="timeline  block mt-5">
             <div class="tl-item">
                 <div class="tl-dot b-warning"></div>
                 <div class="tl-content">
-                    <div class="">fasfasfsfsaion</div>
+                    <div class="">fasfasfsfsaion <i className='text-danger'><TrashCan16/></i></div>
                     <p className="text-secondary">dsdw</p>
                     <div class="tl-date text-muted mt-1">13 june 18</div>
                 </div>

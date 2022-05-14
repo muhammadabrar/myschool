@@ -18,7 +18,6 @@ var handledate = (e) =>{
     setDate(e.target.value.split('-'))
 
 }
-console.log("date:" + startDate +", " + Date[0])
   return (
    <>
              <input type="date" min="2017-04-01" max="2017-04-30" aria-label="First name"  value={startDate} onChange={(e)=> handledate(e)} className={`form-control mt-2 shadow-none ${theme && "bg-info text-light"}`} />

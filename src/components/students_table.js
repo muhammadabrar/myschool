@@ -159,10 +159,11 @@ function Students() {
               <option value="2">Two</option>
               <option value="3">Three</option>
             </select>
-            <div className="s-menu">
+            <div className="s-menu text-light">
               <OverflowMenu
                 flipped="true"
-                className="MenuOverflow"
+                theme="dark"
+                className="MenuOverflow text-light"
                 data-floating-menu-container
                 selectorPrimaryFocus={".optionOne"}
               >

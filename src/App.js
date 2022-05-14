@@ -18,6 +18,7 @@ import Student_profile from './pages/student';
 import Withdrawal from './pages/withdrawal';
 import Admission from './pages/admission';
 import { Progress } from './pages/progress';
+import Finance from './pages/finance';
 function App() {
   return (
   <>
@@ -38,6 +39,8 @@ function App() {
       <Route   path="/admission" element={<Admission />} />
 
       <Route  path="/exam/:examid" element={<ExamDetail />} />
+      <Route  path="/finance" element={<Finance />} />
+
 
       </Route>
       

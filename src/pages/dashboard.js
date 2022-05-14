@@ -22,7 +22,6 @@ function Dashboard() {
   const [IsClasses, setIsClasses] = useState(isMobile ? false : true);
 
 
-
   const dispatch = useDispatch();
   useEffect(() => {
     // Update the document title using the browser API

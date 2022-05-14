@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "@carbon/icons-react": "10.22.0",
-    "@emotion/react": "^11.7.0",
-    "@emotion/styled": "^11.6.0",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

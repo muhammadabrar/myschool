@@ -11,20 +11,28 @@ import './styles/admission.css'
 import './styles/classess.css'
 import './styles/staff.css'
 import './styles/students.css'
+import './styles/finance.css'
+
 
 
 import App from './App';
 import { store } from './store/store'
 import { Provider } from 'react-redux'
+// 1. import `ChakraProvider` component
+// import { ChakraProvider } from '@chakra-ui/react'
 ReactDOM.render(
+  
   <div className='root'>
+    
   <Provider store={store} >
+  <>
     <App  />
+    </>
   </Provider>
-  </div>,
+  </div>
+  ,
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,
   document.getElementById('root')
 );
-

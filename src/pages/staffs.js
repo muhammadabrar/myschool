@@ -23,6 +23,7 @@ import {
 } from "@carbon/icons-react";
 import cover from "../cover.jpg";
 import SalaryChart from '../components/staff/salaryChart';
+import EditStaff from '../components/staff/edit';
 
 function Staffs() {
   const theme = useSelector((state) => state.theme.value)
@@ -34,7 +35,7 @@ function Staffs() {
   }, []);
 
   const [Isdropdown, setIsDropdown] = useState(isMobile ? false : true);
-
+  const [edit, setedit] = useState(false);
 
 
 
@@ -67,7 +68,7 @@ function Staffs() {
                     </i>
                     With Drawal
                   </button>
-                  <button className={`p-action ${theme && "text-light"}`}>
+                  <button className={`p-action ${theme && "text-light"}`} onClick={()=> setedit(true)}>
                     <i className="p-a-icon">
                       <Edit24 />
                     </i>
@@ -168,7 +169,7 @@ function Staffs() {
      
     </div>
 
-
+<EditStaff show={edit} onHide={() => setedit(false)}/>
     
   
   </>

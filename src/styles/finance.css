@@ -1,0 +1,104 @@
+.finance-card{
+    border-radius: .5rem;
+    height: 15rem;
+}
+.finance-card-header{
+    display: flex;
+    justify-content: space-between;
+}
+.finance-card-body{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+.r-logo{
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    /* box-shadow: 0 0px 10px 0 rgba(20, 36, 255, 0.3); */
+    border: rgb(59, 82, 255)  2px solid;
+    padding: 0.2rem;
+
+}
+.p-logo{
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    /* box-shadow: 0 0px 10px 0 rgba(20, 36, 255, 0.3); */
+    border: rgb(59, 82, 255)  2px solid;
+    padding: 0.2rem;
+}
+.f-info{
+    /* width: 7rem; */
+    height: 7rem;
+    padding: 0.3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.partner{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #888;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.partner:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.p-info{
+    /* width: 7rem; */
+    height: 5rem;
+    padding: 0.3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.f-info-price{
+    display: flex;
+    align-items: center;
+
+}
+.sub-price{
+    font-size: small;
+    padding-bottom: 0.2rem;
+}
+.price-refresh{
+    margin: 0 0.5rem;
+    /* background-color: black; */
+    /* color: beige; */
+    padding: 0.3rem;
+    border-radius: 50%;
+
+}
+
+@media screen and (max-width: 445px) {
+    .finance-card{
+        border-radius: .5rem;
+        height: 12rem;
+    }
+    .f-info{
+        height: 5rem;
+    }
+    .r-logo{
+        width: 5rem;
+        height: 5rem;
+    }
+    .r-price{
+        font-size: large;
+        font-weight: 800;
+    }
+    .f-info-title{
+        font-size: medium;
+    }
+  }

@@ -11,7 +11,7 @@ import {
   TimePicker,
 } from "carbon-components-react";
 import Select from "react-select";
-function Add_Class(props) {
+function Edit_Class(props) {
   const theme = useSelector((state) => state.theme.value);
   const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -55,7 +55,7 @@ function Add_Class(props) {
             className=" "
             style={{ display: "flex", justifyContent: "space-between" }}
           >
-            Add Class
+            Edit Class
           </div>
         </Modal.Title>
       </Modal.Header>
@@ -139,4 +139,4 @@ function Add_Class(props) {
   );
 }
 
-export default Add_Class;
+export default Edit_Class;
